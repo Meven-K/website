@@ -28,6 +28,30 @@
         pointer-events: none;
     }
 
+    .get-space{
+      margin: 0 10px;
+    }
+
+    .button {
+      background-color: #08223a; /* Green */
+      border: none;
+      color: white;
+      margin: 0 10px;
+      padding: 4px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .button {
+      transition-duration: 0.1s;
+    }
+
+    .button:hover {
+      background-color: #dce2e9;
+      color: #08223a;
+    }
+
 </style>
 
 <div class="toolbar" role="banner">
@@ -38,6 +62,19 @@
     />
   
     <span>Welcome to Meven Kerzreho website.</span>
+    <a class="get-space"></a>
+
+    <a routerLink="/">
+      <span class="button">HOME</span>
+    </a>
+
+    <a routerLink="/cv">
+      <span class="button">CV</span>
+    </a>
+
+    <a routerLink="/projects">
+      <span class="button">PROJECTS</span>
+    </a>
   
     <div class="spacer"></div>
     
