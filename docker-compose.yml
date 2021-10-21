@@ -1,0 +1,14 @@
+version: "2"  # optional since v1.27.0
+
+services:
+  app:
+    build: 
+      context: .
+      args:
+        PROXY: ${PROXY}
+    ports:
+      - "3000:80"
+    env_file:
+      - .env 
+
+

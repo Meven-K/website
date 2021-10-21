@@ -47,6 +47,7 @@ docker-compose --version
 [Service]
 Environment="HTTP_PROXY=http://{PROXY}:{PORT}"
 Environment="HTTPS_PROXY=http://{PROXY}:{PORT}"
+Environment="FTP_PROXY=http://{PROXY}:{PORT}"
 ```
 
 ```sudo systemctl daemon-reload```
@@ -58,3 +59,16 @@ Environment="HTTPS_PROXY=http://{PROXY}:{PORT}"
 ```docker build -f Dockerfile.test.proxy .```
 
 ```docker run {id_container}```
+
+## Launch app
+
+### localy
+
+```ng start --open```
+
+### via docker
+
+```
+docker-compose -f docker-compose.yml build
+docker-compose -f docker-compose.yml up 
+```
