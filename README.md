@@ -4,7 +4,7 @@ About the app : [App](./README.app.md)
 
 About Ddocker : [Readme](./README.docker.md)
 
-## Setup env
+## Setup local env
 
 ### Installations
 
@@ -59,6 +59,10 @@ Environment="FTP_PROXY=http://{PROXY}:{PORT}"
 ```docker build -f Dockerfile.test.proxy .```
 
 ```docker run {id_container}```
+
+## Setup app env
+
+You can setup a local env to dev following [app_setup](./app/README.app.md), or by running the app on a dev container. To do that, install the remote dev extension on vs-code, and reopen your folder on remote.
 
 ## Launch app
 
