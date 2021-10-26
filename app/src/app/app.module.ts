@@ -9,6 +9,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { CvComponent } from './cv/cv.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { SphereComponent } from './sphere/sphere.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProjectsComponent } from './projects/projects.component';
     ToolbarComponent,
     CvComponent,
     HomeComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SphereComponent
   ],
   imports: [
     BrowserModule,

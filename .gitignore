@@ -1,2 +1,4 @@
 tokens.txt
 .env
+
+app/node_modules/.*
