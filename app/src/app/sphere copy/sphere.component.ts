@@ -11,19 +11,19 @@ export class SphereComponent implements OnInit, AfterViewInit {
   @ViewChild('canvas')
   private canvasRef!: ElementRef;
 
-  //* Sphere Properties
+  //* Cube Properties
 
   @Input() public rotationSpeedX: number = 0.05;
 
   @Input() public rotationSpeedY: number = 0.01;
 
-  @Input() public R: number = 1;
+  @Input() public size: number = 200;
 
   @Input() public texture: string = "/assets/texture.jpg";
 
 
   //* Stage Properties
-  
+
   @Input() public cameraZ: number = 400;
 
   @Input() public fieldOfView: number = 1;
@@ -40,10 +40,10 @@ export class SphereComponent implements OnInit, AfterViewInit {
     return this.canvasRef.nativeElement;
   }
   private loader = new THREE.TextureLoader();
-  geometry = new THREE.SphereGeometry( this.R, 32, 32 );
+  private geometry = new THREE.BoxGeometry(1, 1, 1);
   private material = new THREE.MeshBasicMaterial({ map: this.loader.load(this.texture) });
 
-  private sphere: THREE.Mesh = new THREE.Mesh(this.geometry, this.material);
+  private cube: THREE.Mesh = new THREE.Mesh(this.geometry, this.material);
 
   private renderer!: THREE.WebGLRenderer;
 
@@ -56,8 +56,8 @@ export class SphereComponent implements OnInit, AfterViewInit {
    * @memberof SphereComponent
    */
   private animateCube() {
-    this.sphere.rotation.x += this.rotationSpeedX;
-    this.sphere.rotation.y += this.rotationSpeedY;
+    this.cube.rotation.x += this.rotationSpeedX;
+    this.cube.rotation.y += this.rotationSpeedY;
   }
 
   /**
@@ -70,7 +70,7 @@ export class SphereComponent implements OnInit, AfterViewInit {
     //* Scene
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xffffff);  
-    this.scene.add(this.sphere);
+    this.scene.add(this.cube);
     //*Camera
     let aspectRatio = this.getAspectRatio();
     this.camera = new THREE.PerspectiveCamera(
